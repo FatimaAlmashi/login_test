@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="warning">
+    <ion-title>
+      Login Page
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <form (submit)="LoginUser($event)" style="width: 100%; justify-content: center; align-content: center;">
+    <ion-item >
+      <input type="text" placeholder="Username" id="username">
+    </ion-item>
+    <ion-item>
+      <input type="password" placeholder="Password" id="password">
+    </ion-item>
+    <ion-item>
+      <input type="submit" value="Submit">
+    </ion-item>
+  </form>
+
+</ion-content>
