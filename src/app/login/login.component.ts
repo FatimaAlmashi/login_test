@@ -9,27 +9,30 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
+
+
 export class LoginComponent implements OnInit {
 
-  // LoginForm: FormGroup;
-  // username: AbstractControl;
-  // password: AbstractControl;
+  LoginForm: FormGroup;
+  username: AbstractControl;
+  password: AbstractControl;
+
   // // public response: ResponseModel;
   // // public responseNT: ResponseModel;
   // // NT: NotificationModel;
   // service: any;
   // EMP_TYPE: string;
 
-  constructor(private router: Router) { 
-    // this.LoginForm = fb.group({
-    //   username: ['', Validators.compose([Validators.required, Validators.minLength(1),
-    //   ])],
-    //   password: ['', Validators.compose([Validators.required, Validators.minLength(8)])],
-    // });
+  constructor(private router: Router, fb: FormBuilder) { 
+    this.LoginForm = fb.group({
+      username: ['', Validators.compose([Validators.required, Validators.minLength(10), 
+      ])],
+      password: ['', Validators.compose([Validators.required, Validators.minLength(8)])],
+    });
 
-    // this.username = this.LoginForm.controls.username;
-    // this.password = this.LoginForm.controls.password;
-    // // this.service = _service;
+    this.username = this.LoginForm.controls.username;
+    this.password = this.LoginForm.controls.password;
+    // this.service = _service;
   }
 
   ngOnInit() {}

@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="mycolor">
+    <ion-title slot="end">
+      صفحة تسجيل الدخول
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" color="dark">
+  <form [formGroup]="LoginForm" (ngSubmit)="onSubmit()" >
+    <ion-grid>
+      <ion-col>
+        <ion-row class="ion-justify-content-center" style="margin-top: 5rem;">
+          <ion-item color="inhirit">
+            <ion-input style="text-align: end;" type="text" placeholder="اسم المستخدم" [formControl]="username" ></ion-input>
+          </ion-item>
+          <ion-item color="inhirit">
+            <ion-input style="text-align: end;" type="password" placeholder="كلمة المرور" [formControl]="password"></ion-input>
+          </ion-item>
+        </ion-row>
+        <ion-row style="margin-top: 2rem;" class="ion-justify-content-center">
+          <ion-button color="mycolor" type="submit" [disabled]="!LoginForm.valid">Login</ion-button>
+        </ion-row>
+      </ion-col>
+  </ion-grid>
+</form>
+</ion-content>
+
+
+

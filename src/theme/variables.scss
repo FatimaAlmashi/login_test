@@ -3,6 +3,26 @@
 
 /** Ionic CSS Variables **/
 :root {
+  
+
+  /** mycolor **/
+  --ion-color-mycolor: #a6d3e1;
+  --ion-color-mycolor-rgb: 166,211,225;
+  --ion-color-mycolor-contrast: #000000;
+  --ion-color-mycolor-contrast-rgb: 0,0,0;
+  --ion-color-mycolor-shade: #92bac6;
+  --ion-color-mycolor-tint: #afd7e4;
+
+
+  /** mydark **/
+  --ion-color-mydark: #4b4b4b;
+  --ion-color-mydark-rgb: 75,75,75;
+  --ion-color-mydark-contrast: #ffffff;
+  --ion-color-mydark-contrast-rgb: 255,255,255;
+  --ion-color-mydark-shade: #424242;
+  --ion-color-mydark-tint: #5d5d5d;
+
+
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;
@@ -233,4 +253,23 @@
 
     --ion-card-background: #1e1e1e;
   }
+
+  .ion-color-mycolor {
+    --ion-color-base: var(--ion-color-mycolor);
+    --ion-color-base-rgb: var(--ion-color-mycolor-rgb);
+    --ion-color-contrast: var(--ion-color-mycolor-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-mycolor-contrast-rgb);
+    --ion-color-shade: var(--ion-color-mycolor-shade);
+    --ion-color-tint: var(--ion-color-mycolor-tint);
+  }
+
+  .ion-color-mydark {
+    --ion-color-base: var(--ion-color-mydark);
+    --ion-color-base-rgb: var(--ion-color-mydark-rgb);
+    --ion-color-contrast: var(--ion-color-mydark-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-mydark-contrast-rgb);
+    --ion-color-shade: var(--ion-color-mydark-shade);
+    --ion-color-tint: var(--ion-color-mydark-tint);
+  }
+
 }
