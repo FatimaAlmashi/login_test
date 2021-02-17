@@ -11,13 +11,14 @@ import { ListComponent } from './list/list.component';
 import { HomePage } from './home/home.page';
 import { HttpClientModule } from '@angular/common/http'
 
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ListComponent,
     HomePage
-  ],
+    ],
   entryComponents: [],
   imports: [
     BrowserModule,
