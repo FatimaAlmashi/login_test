@@ -42,25 +42,22 @@ export class Login2Page implements OnInit {
 
   onSubmit() {
     const loginUrl  = 'https://wsrv.holymakkah.gov.sa/HMM_SB/Mathwa/Service1.svc/rest/login?';
-    const res = this.http.get(loginUrl + 'user_name=' + this.username + '&password=' + this.password, {}).subscribe(res => {console.log(res)});
-    this.response = new LoginModel();
-    console.log('this.response.code = '+ this.response.code)
+    const res = this.http.get(loginUrl + 'user_name=' + this.username + '&password=' + this.password, {}).subscribe(res => {
+      console.log(res)
+      this.response = new LoginModel();
+      console.log('this.response.return_value = ', this.response.return_value)
 
-    switch (this.response.code) {
-      case '100':
-        this.router.navigate(['list']);
-        break;
-      default:
-        console.log('Failed to login in !')
-    }
+      switch (this.response.code) {
+        case '100':
+          this.router.navigate(['list']);
+          break;
+        default:
+          console.log('Failed to login in ! + navigate to list')
+          this.router.navigate(['list']);
+      }
+
+    });
 
   }
 
-  // {"loginResult":{"code":200,"msg":"success","return_value":"ttttooookkkkeeennn"}}
-
-
-  backToMain() {
-    // console.log('>>>>>> backToMain <<<<<<');
-    // this.router.navigate(['']);
-  }
 }
