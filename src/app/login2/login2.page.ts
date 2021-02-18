@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import { Router } from '@angular/router';
+import {LoginModel} from '../models/LoginModel';
 
 
 @Component({
@@ -16,6 +17,8 @@ export class Login2Page implements OnInit {
   LoginForm: FormGroup;
   username: AbstractControl;
   password: AbstractControl;
+
+  response: LoginModel;
 
   constructor(
     private router: Router, 
@@ -38,14 +41,23 @@ export class Login2Page implements OnInit {
   ngOnInit() {}
 
   onSubmit() {
-
-    console.log('>>>>>> onSubmit <<<<<<')
     const loginUrl  = 'https://wsrv.holymakkah.gov.sa/HMM_SB/Mathwa/Service1.svc/rest/login?';
     const res = this.http.get(loginUrl + 'user_name=' + this.username + '&password=' + this.password, {}).subscribe(res => {console.log(res)});
-    console.log('>>>>>> res = ', res)
-    this.router.navigate(['list']);
+    this.response = new LoginModel();
+    console.log('this.response.code = '+ this.response.code)
+
+    switch (this.response.code) {
+      case '100':
+        this.router.navigate(['list']);
+        break;
+      default:
+        console.log('Failed to login in !')
+    }
 
   }
+
+  // {"loginResult":{"code":200,"msg":"success","return_value":"ttttooookkkkeeennn"}}
+
 
   backToMain() {
     // console.log('>>>>>> backToMain <<<<<<');
